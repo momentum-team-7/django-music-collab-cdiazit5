@@ -2,12 +2,9 @@
 
 {% block content %}
     {%for artist in artists%}
-        <article class = 'album_list'>
-            <h3>{{artist.title}}</h3>
-            <p>{{artist.artist}}</p>
-            <time class="date">
-                {{artist.release_date}}
-            </time>
+        <article class = 'artist_list'>
+            <h3>{{artist.name}}</h3>
+            <p>{{artist.genre}}</p>
         </article>
     {% endfor %}
 {% endblock %}
