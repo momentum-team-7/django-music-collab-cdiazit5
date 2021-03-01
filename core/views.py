@@ -9,4 +9,4 @@ def album_posts(request):
 
 def artist_posts(request):
     artists = Artist.objects.all()
-    return render(request, 'music_temps/artist_posts.html', {'artist': artists})
+    return render(request, 'music_temps/artist_posts.html', {'artists': artists})
