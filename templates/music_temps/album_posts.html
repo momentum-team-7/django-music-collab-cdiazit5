@@ -1,13 +1,22 @@
 {% extends 'music_temps/base.html' %}
 
 {% block content %}
-    {%for album in albums%}
-        <article class = 'album_list'>
-            <h3>{{album.title}}</h3>
-            <p>{{album.artist}}</p>
-            <time class="date">
-                {{album.release_date}}
-            </time>
-        </article>
-    {% endfor %}
+    <ul>
+        <li><h4><a href="{% url 'home' %}">Home</a></h4></li>
+        <li><h4><a href="{% url 'artists' %}">Artists Page</a></h4></li>
+    </ul>
+    <h2>List of Albums:</h2>
+    <div>
+        {%for album in albums%}
+            <article class = 'album_list'>
+                <a href="{% url 'album-detail' pk=album.pk %}"><h3>{{album.title}}</h3></a>
+                <p>{{album.artist}}</p>
+                <time class="date">
+                    {{album.release_date}}
+                </time>
+            </article>
+        {% endfor %}
+    </div>
+
+
 {% endblock %}

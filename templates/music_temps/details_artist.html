@@ -1,0 +1,14 @@
+{% extends 'music_temps/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <ul>
+        <li><h4><a href="{% url 'home' %}">Home</a></h4></li>
+        <li><h4><a href="{% url 'album_posts' %}">Album page</a></h4></h4></li>
+    </ul>
+    <h2>{{artist}}</h2>
+    <ul>
+        <li>{{artist.genre}}</li>
+    </ul>
+{% endblock %}

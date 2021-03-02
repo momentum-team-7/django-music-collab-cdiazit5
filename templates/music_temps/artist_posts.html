@@ -1,10 +1,17 @@
 {% extends 'music_temps/base.html' %}
 
 {% block content %}
-    {%for artist in artists%}
-        <article class = 'artist_list'>
-            <h3>{{artist.name}}</h3>
-            <p>{{artist.genre}}</p>
-        </article>
-    {% endfor %}
+<ul>
+    <li><h4><a href="{% url 'home' %}">Home</a></h4></li>
+    <li><h4><a href="{% url 'album_posts' %}">Album page</a></h4></h4></li>
+</ul>
+    <h2>List of Artists:</h2>
+    <div>
+        {% for artist in artists %}
+            <article class = 'artist_list'>
+                <a href="{% url 'artist-detail' pk=artist.pk %}"><h3>{{artist.name}}</h3></a>
+                <p>{{artist.genre}}</p>
+            </article>
+        {% endfor %}
+    </div>  
 {% endblock %}
