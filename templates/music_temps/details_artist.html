@@ -11,4 +11,6 @@
     <ul>
         <li>{{artist.genre}}</li>
     </ul>
+    <a href="{% url 'edit-artist' pk=artist.pk%}">Edit Artist</a>
+    <a href="{% url 'delete-artist' pk=artist.pk%}">Delete Artist</a> 
 {% endblock %}

@@ -9,7 +9,9 @@
     <div>
         {%for album in albums%}
             <article class = 'album_list'>
+                {% if album.cover %}
                 <img src="{{ album.cover.url}}" alt="{{ album.title }}">
+                {% endif %}
                 <a href="{% url 'album-detail' pk=album.pk %}"><h3>{{album.title}}</h3></a>
                 <p>{{album.artist}}</p>
                 <time class="date">

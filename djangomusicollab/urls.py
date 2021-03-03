@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from core import views 
-from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,11 @@ urlpatterns = [
     path('artists', views.artist_posts, name='artists'),
     path('albums/<int:pk>/', views.album_detail, name='album-detail'),
     path('artists/<int:pk>/', views.artist_detail, name='artist-detail'),
+    path('albums/new', views.add_album, name="add-album"),
+    path('artists/new', views.add_artist, name="add-artist"),
+    path('artists/<int:pk>/edit', views.edit_artist, name="edit-artist"),
+    path('albums/<int:pk>/edit', views.edit_album, name="edit-album"),
+    path('artists/<int:pk>/delete', views.delete_artist, name="delete-artist"),
 ]
 
 if settings.DEBUG:

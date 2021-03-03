@@ -13,4 +13,5 @@
         <li>{{album.artist}}</li>
         <li>{{album.release_date}}</li>
     </ul>
+    <a href="{% url 'edit-album' pk=album.pk%}">Edit Album</a> 
 {% endblock %}

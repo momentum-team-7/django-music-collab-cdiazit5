@@ -1,4 +1,13 @@
-.page-title {
-    margin-bottom: 30px;
-    background-color: aquamarine;
+* {
+    background: aquamarine;
+}
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+article.album_list {
+    border: 2px solid black;
+    max-width: 200px;
 }

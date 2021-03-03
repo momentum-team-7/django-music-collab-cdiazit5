@@ -20,10 +20,10 @@ class Artist(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=280)
     cover = models.ImageField(upload_to='images/', blank=True, null=True)
-    # artist = models.CharField(max_length=75)
+    artist = models.CharField(max_length=75, blank=True, null=True)
     release_date = models.IntegerField(blank=True, null=True)
     # one to many relationship, using the foreign key
-    artist = models.ForeignKey(Artist, max_length=100, on_delete=models.CASCADE, blank=True, null=True, related_name="albums")
+    # artist = models.ForeignKey(Artist, max_length=100, on_delete=models.CASCADE, blank=True, null=True, related_name="albums")
     # this change doesn't change the DB so no mirgrations are needed 
     def __str__(self):
         return self.title
