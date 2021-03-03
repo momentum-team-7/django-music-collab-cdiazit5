@@ -68,7 +68,7 @@ ROOT_URLCONF = 'djangomusicollab.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))], # new
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,3 +138,6 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

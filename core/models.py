@@ -19,6 +19,7 @@ class Artist(models.Model):
 
 class Album(models.Model):
     title = models.CharField(max_length=280)
+    cover = models.ImageField(upload_to='images/', blank=True, null=True)
     # artist = models.CharField(max_length=75)
     release_date = models.IntegerField(blank=True, null=True)
     # one to many relationship, using the foreign key
